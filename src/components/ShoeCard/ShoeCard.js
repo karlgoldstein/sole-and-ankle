@@ -36,6 +36,7 @@ const ShoeCard = ({
       <Wrapper>
         <ImageWrapper>
           <Image alt="" src={imageSrc} />
+          {variant !== 'default' && <Alert>{variant}</Alert>}
         </ImageWrapper>
         <Spacer size={12} />
         <Row>
@@ -53,6 +54,7 @@ const ShoeCard = ({
 const Link = styled.a`
   text-decoration: none;
   color: inherit;
+  flex: 1 1 240px;
 `;
 
 const Wrapper = styled.article``;
@@ -61,7 +63,9 @@ const ImageWrapper = styled.div`
   position: relative;
 `;
 
-const Image = styled.img``;
+const Image = styled.img`
+  width: 100%;
+`;
 
 const Row = styled.div`
   font-size: 1rem;
@@ -81,6 +85,13 @@ const ColorInfo = styled.p`
 const SalePrice = styled.span`
   font-weight: ${WEIGHTS.medium};
   color: ${COLORS.primary};
+`;
+
+const Alert = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 8px;
 `;
 
 export default ShoeCard;
